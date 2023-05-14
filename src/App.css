@@ -4,11 +4,21 @@
   list-style: none;
   text-decoration: none;
 }
+
+body {
+  overflow-x: hidden;
+}
+
 input {
   border: none;
 }
+
 input:focus {
   outline: none;
+}
+
+.add-page {
+  background-color: yellowgreen;
 }
 
 .container {
@@ -39,20 +49,27 @@ input:focus {
   font-size: 16px;
 }
 
-.nav__add {
+.btn {
   padding: 5px;
+  margin: 10px;
+  border: none;
   border-radius: 5px;
   background-color: green;
   box-shadow: 0.5px 0.5px 2px rgb(80, 182, 182);
 
-  font-size: 18px;
+  color: whitesmoke;
+  font-size: 14px;
   font-weight: bold;
-
-  margin-top: 15px;
 }
 
-.nav__add:hover {
+.btn:hover {
   box-shadow: 0.5px 0.5px 8px rgb(92, 208, 208);
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: rgb(74, 202, 74);
+  cursor: default;
 }
 
 .nav_links .nav__add {
@@ -61,18 +78,37 @@ input:focus {
 
 .add-content {
   width: 100vw;
+  min-height: 100vh;
+  padding-top: 10px;
 }
 
 .input-wrapper {
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   background-color: #021437;
-  padding: 8px;
-  border-radius: 0 0 2px 2px;
+  padding: 5px;
+  border-radius: 4px;
 }
 
-.input-wrapper input{
+.input-wrapper input {
+  width: 85%;
   background-color: #cac3ff;
   padding: 3px;
   border-radius: 2px;
+  margin-right: 10px;
+}
+
+.results {
+  display: flex;
+  justify-content: left;
+
+  flex-wrap: wrap;
+}
+
+.result-card {
+  padding: 20px 10px;
+}
+
+.controls {
+  text-transform: uppercase;
 }

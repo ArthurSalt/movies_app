@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ResultCard from './ResultCard';
+import '../App.css';
 
 const Add = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
   const getMovies = async () => {
-    const url = 'https://online-movie-database.p.rapidapi.com/title/find?q=search';
+    const url = `https://online-movie-database.p.rapidapi.com/title/find?q=${query}`;
     const options = {
       method: 'GET',
       headers: {
@@ -24,17 +25,24 @@ const Add = () => {
       console.error(error);
     }
   }
-
-  useEffect(() => {
-    getMovies();
-  }, [])
-
+  const getBurgers = async () => {
+    const url = `https://bobsburgers-api.herokuapp.com/characters/?limit=9&skip=195`;
+    const response = await fetch(url);
+    const data = await response.json();
+    setResults(data);
+    console.log(data)
+  }
 
   function onChange(e) {
     e.preventDefault();
     setQuery(e.target.value);
-    getMovies();
+    // getMovies();
   }
+
+  // const getData = () => {
+  //   getBurgers();
+  // }
+
   return (
     <div className="add-page">
       <div className="container">
@@ -44,19 +52,18 @@ const Add = () => {
               placeholder='Search for a movie'
               value={query}
               onChange={onChange} />
+            <button className='btn' onClick={getBurgers}>Search</button>
           </div>
 
           {results && (
             <ul className="results">
               {results.map(movie => (
                 <li key={movie.id}>
-                  <ResultCard movie={movie}/>
+                  <ResultCard movie={movie} />
                 </li>
               ))}
             </ul>
           )}
-
-
         </div>
       </div>
     </div>

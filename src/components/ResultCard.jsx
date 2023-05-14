@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import '../App.css';
+import { GlobalContext } from '../context/GlobalState';
 
 const ResultCard = ({ movie }) => {
+   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext)
+
+   let storedMovie = watchlist.find(obj => obj.id === movie.id);
+   let watchlistDisabled = storedMovie ? true : false;
+
    return (
       <div className='result-card'>
-         <div className="poster-wrapper">
+         <div className="burger_info">
+            <img src={movie.image} width='200px' height='250px' alt="" />
+            <h2>{movie.name}</h2>
+            <button className='controls btn'
+               disabled={watchlistDisabled}
+               onClick={() => addMovieToWatchlist(movie)}
+            >Add to Watchlist</button>
+         </div>
+         {/* <div className="poster-wrapper">
             {movie.imageurl[0] ? (
                <img src={movie.imageurl[0]} alt={movie.title} />
             ) : (
                <div className="filler-poster"></div>
             )}
-         </div>
+         </div> */}
       </div>
    );
 }
