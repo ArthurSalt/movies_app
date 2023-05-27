@@ -14,15 +14,17 @@ export default function Header() {
             <li>
               <Link to='/' >Watch List</Link>
             </li>
-
             <li>
               <Link to='/watched'>Watched</Link>
             </li>
-
             <li>
               <Link to='/add' className='btn'>+ Add</Link>
             </li>
+            <li>
+              <Link to='/forum' className='btn'>Forum</Link>
+            </li>
           </ul>
+
         </div>
       </div>
     </div>

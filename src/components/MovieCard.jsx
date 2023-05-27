@@ -2,11 +2,11 @@
 import MovieControlls from './MovieControlls';
 
 
-const MovieCard = ({ movie, type }) => {
+export const MovieCard = ({ movie, type }) => {
    return (
-      <div>
+      <div >
          {movie.image ? (
-            <img src={movie.image} alt="poster" />
+            <img src={movie.image} width='200px' height='250px' alt="poster" />
          ) : (
             <p>No poster</p>
          )}

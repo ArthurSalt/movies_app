@@ -72,6 +72,19 @@ input:focus {
   cursor: default;
 }
 
+.count {
+  padding: 5px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(46, 136, 70);
+  box-shadow: 0.5px 0.5px 2px rgb(80, 182, 182);
+
+  color: whitesmoke;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .nav_links .nav__add {
   color: rgb(0, 0, 0);
 }
