@@ -1,6 +1,6 @@
-import { getPagesArray } from "../../../utils/pages";
+import { getPagesArray } from "../../forum/utils/pages";
 
-const Pagination = ({totalPages, page, changePage}) => {
+const Pagination = ({ totalPages, page, changePage }) => {
    const pagesArray = getPagesArray(totalPages);
    return (
       <div className="page__wrapper">

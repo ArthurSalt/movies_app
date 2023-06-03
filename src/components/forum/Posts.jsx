@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import PostList from '../components/PostList';
-import PostForm from '../components/PostForm';
-import PostFilter from '../components/PostFilter';
-import MyButton from '../components/UI/button/MyButton';
-import MyModal from '../components/UI/MyModal/MyModal';
-import Loader from '../components/UI/Loader/Loader';
-import Pagination from '../components/UI/pagination.jsx/pagination';
-import { usePosts } from '../hooks/usePosts';
-import PostService from '../API/PostService';
-import { useFetching } from '../hooks/useFetching';
-import { getPageCount } from '../utils/pages';
+import PostList from './forumComps/PostList';
+import PostForm from './forumComps/PostForm';
+import PostFilter from './forumComps/PostFilter';
+import MyButton from '../UI/button/MyButton';
+import MyModal from '../UI/MyModal/MyModal';
+import Loader from '../UI/Loader/Loader';
+import Pagination from '../UI/pagination.jsx/pagination';
+import { usePosts } from '../../hooks/usePosts';
+import PostService from '../../API/PostService';
+import { useFetching } from '../../hooks/useFetching';
+import { getPageCount } from './utils/pages';
 
-import '../styles/Forum.css'
+import './Forum.css'
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -51,12 +51,13 @@ function Posts() {
   return (
     <div className="App">
 
-      <MyButton onClick={fetchPosts}>Get Posts</MyButton>
-      <MyButton onClick={() => setModal(true)}>Создать пользователя</MyButton>
+      {/* <MyButton onClick={fetchPosts}>Get Posts</MyButton> */}
+      <MyButton onClick={() => setModal(true)}>Создать новую тему</MyButton>
 
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm create={createPost} />
       </MyModal>
+
 
       <hr style={{ margin: '20px' }} />
 
@@ -67,13 +68,13 @@ function Posts() {
       {postError && <h1 style={{ textAlign: 'center' }}>Произошла ошибка</h1>}
       {isPostsLoading
         ? <Loader />
-        : <PostList posts={sortedAndSearchedPosts} remove={removePost} title='Список постов 1' />
+        : <PostList posts={sortedAndSearchedPosts} remove={removePost} title='Список тем' />
       }
       <Pagination
         page={page}
         changePage={changePage}
-        totalPages={totalPages} 
-        />
+        totalPages={totalPages}
+      />
     </div>
   );
 }

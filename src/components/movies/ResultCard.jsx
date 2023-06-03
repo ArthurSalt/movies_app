@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import '../App.css';
-import { GlobalContext } from '../context/GlobalState';
+import '../../App.css';
+import { GlobalContext } from '../../context/GlobalState';
 
 const ResultCard = ({ movie }) => {
    const { addMovieToWatchlist, watchlist, watched } = useContext(GlobalContext)

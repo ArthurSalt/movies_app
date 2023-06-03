@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ResultCard from './ResultCard';
-import '../App.css';
+import '../../App.css';
 
 const Add = () => {
   const [query, setQuery] = useState('');
