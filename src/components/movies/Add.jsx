@@ -7,20 +7,19 @@ const Add = () => {
   const [results, setResults] = useState([]);
 
   const getMovies = async () => {
-    const url = `https://online-movie-database.p.rapidapi.com/title/find?q=${query}`;
+    const url = 'https://moviesdatabase.p.rapidapi.com/titles';
     const options = {
       method: 'GET',
       headers: {
         'X-RapidAPI-Key': '821f8762f7mshad36b6397ecd8edp18cf51jsnde811bb8c9ea',
-        'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
       }
     };
 
     try {
       const response = await fetch(url, options);
-      const data = await response.json();
-      console.log(data.results);
-      setResults(data.results)
+      const result = await response.text();
+      console.log(result);
     } catch (error) {
       console.error(error);
     }
@@ -52,7 +51,7 @@ const Add = () => {
               placeholder='Search for a movie'
               value={query}
               onChange={onChange} />
-            <button className='btn' onClick={getBurgers}>Search</button>
+            <button className='btn' onClick={getMovies}>Search</button>
           </div>
 
           {results && (
