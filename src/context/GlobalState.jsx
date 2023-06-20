@@ -14,7 +14,7 @@ export const GlobalProvider = props => {
 
    useEffect(() => {
       localStorage.setItem('watchlist', JSON.stringify(state.watchlist));
-      localStorage.setItem('watched', JSON.stringify(state.watched))
+      localStorage.setItem('watched', JSON.stringify(state.watched));
    }, [state])
 
    const addMovieToWatchlist = (movie) => {
@@ -42,6 +42,7 @@ export const GlobalProvider = props => {
          value={{
             watchlist: state.watchlist,
             watched: state.watched,
+            fetchResults: state.fetchResults,
             addMovieToWatchlist,
             removeMovieFromWatchlist,
             addMovieToWatched,

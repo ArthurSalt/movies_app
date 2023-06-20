@@ -33,6 +33,7 @@ function Posts() {
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost])
+
     setModal(false)
   }
 
