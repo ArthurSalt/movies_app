@@ -70,6 +70,8 @@ input:focus {
 }
 
 .count {
+  position: relative;
+  left: 90%;
   padding: 5px;
   margin: 10px;
   border: none;
@@ -110,15 +112,37 @@ input:focus {
 
 .results {
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  align-items: center;
 
   flex-wrap: wrap;
 }
 
-.result-card {
-  padding: 20px 10px;
-}
-
 .controls {
   text-transform: uppercase;
+}
+
+.result_item {
+  width: 220px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster {
+  width: 200px;
+  height: 250px;
+}
+
+.movies_list {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie_card {
+  margin: 10px;
 }

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalState';
-import MovieCard from './MovieCard';
+import MovieCard from './MovieCard/MovieCard';
+
+import '../../App.css';
 
 const Watchlist = () => {
   const { watchlist } = useContext(GlobalContext)
@@ -9,11 +11,14 @@ const Watchlist = () => {
       <div className='container'>
         <div className="header">
           <h1 className='heading'>My Watchlist</h1>
-          <span className='count' style={{ position: 'relative', left: "90%" }}> {watchlist.length}  {watchlist.length === 1 ? "Movie" : "Movies"}</span>
+          <span className='count'> {watchlist.length}  {watchlist.length === 1 ? "Movie" : "Movies"}</span>
           {watchlist.length > 0 ? (
-            <div>
+            <div className='movies_list'>
               {watchlist.map((movie) => (
-                <MovieCard movie={movie} type='watchlist' />
+                <li key={movie.imdbID}>
+                  <MovieCard movie={movie} type='watchlist' />
+                </li>
+
               ))}
             </div>
           ) : (

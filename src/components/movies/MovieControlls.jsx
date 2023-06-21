@@ -6,7 +6,7 @@ export const MovieControlls = ({ movie, type }) => {
     const { removeMovieFromWatchlist, addMovieToWatched, moveToWatchlist, removeFromWatched } = useContext(GlobalContext)
 
     return (
-        <div className="inner-card-controlls">
+        <div style={{ position: 'relative', bottom: '5xp' }} className="inner-card-controlls">
             {type === 'watchlist' && (
                 <>
                     <button className='ctrl btn' onClick={() => { addMovieToWatched(movie); removeMovieFromWatchlist(movie.imdbID) }}>Watched</button>

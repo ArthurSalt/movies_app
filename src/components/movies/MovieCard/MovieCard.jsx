@@ -1,12 +1,13 @@
 
-import MovieControlls from './MovieControlls';
+import MovieControlls from '../MovieControlls';
 
+import '../../../App.css';
 
 export const MovieCard = ({ movie, type }) => {
    return (
-      <div>
+      <div className='movie_card'>
          {movie.Poster ? (
-            <img src={movie.Poster} width='200px' height='250px' alt="poster" />
+            <img className='poster' src={movie.Poster} alt="poster" />
          ) : (
             <p>No poster</p>
          )}

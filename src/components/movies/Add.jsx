@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ResultCard from './ResultCard';
+import ResultCard from './ResultCard/ResultCard';
 
 import '../../App.css';
 
@@ -29,18 +29,14 @@ const Add = () => {
   // }
 
   const getFilms = async () => {
-    try {
-      const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${query}`
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.Search)
-      setResults(data.Search)
-      localStorage.setItem('fetchResults', JSON.stringify(data.Search))
-    } catch (error) {
-      console.error(error);
-    }
-
+    const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${query}`
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.Search)
+    setResults(data.Search)
+    localStorage.setItem('fetchResults', JSON.stringify(data.Search))
   }
+
 
   function onChange(e) {
     e.preventDefault();
