@@ -5,7 +5,7 @@ import '../../App.css';
 
 const Add = () => {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState(localStorage.getItem('fetchResults') ? JSON.parse(localStorage.getItem('fetchResults')) : []);
+  const [results, setResults] = useState(localStorage.getItem('fetchResults') !== 'undefined' ? JSON.parse(localStorage.getItem('fetchResults')) : []);
 
   // const getMovies = async () => {
   //   const url = 'https://moviesdatabase.p.rapidapi.com/titles';
@@ -29,12 +29,16 @@ const Add = () => {
   // }
 
   const getFilms = async () => {
-    const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${query}`
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data.Search)
-    setResults(data.Search)
-    localStorage.setItem('fetchResults', JSON.stringify(data.Search))
+    try {
+      const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${query}`
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data.Search)
+      localStorage.setItem('fetchResults', JSON.stringify(data.Search))
+      setResults(data.Search)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 

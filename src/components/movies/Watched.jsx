@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState'
 import { MovieCard } from './MovieCard/MovieCard'
 
+import '../../App.css';
+
 const Watched = () => {
   const { watched } = useContext(GlobalContext)
   return (

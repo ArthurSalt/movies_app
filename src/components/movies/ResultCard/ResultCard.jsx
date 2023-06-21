@@ -15,10 +15,10 @@ const ResultCard = ({ movie }) => {
          <div className='movie_info'>
             <img className='poster' src={movie.Poster} alt="" />
             <div className='movie_data'>
-               <h2>{movie.Title.split('').length > 40 
-               ? movie.Title.split('').slice(0, 40).join('') + "..." 
-               : movie.Title
-              }</h2>
+               <h2>{movie.Title.length > 40
+                  ? movie.Title.slice(0, 40) + "..."
+                  : movie.Title
+               }</h2>
                <h3>{movie.Year}</h3>
             </div>
             <button className='controls btn'
