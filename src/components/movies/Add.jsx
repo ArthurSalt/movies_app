@@ -46,7 +46,7 @@ const Add = () => {
           {results && (
             <ul className="results">
               {results.map(movie => (
-                <li key={movie.imdbID} className={'result_card_wrapper'}>
+                <li key={movie.imdbID} className='result_card_wrapper'>
                   <ResultCard movie={movie} />
                 </li>
               ))}

@@ -15,7 +15,7 @@ const Watchlist = () => {
           {watchlist.length > 0 ? (
             <div className='movies_list'>
               {watchlist.map((movie) => (
-                <li key={movie.imdbID}>
+                <li key={movie.imdbID} className='result_card_wrapper'>
                   <MovieCard movie={movie} type='watchlist' />
                 </li>
 
