@@ -22,11 +22,12 @@ input:focus {
   margin: 0 auto;
 }
 
-.inner-content {
+.header__content {
   display: flex;
   justify-content: space-between;
   background-color: #021437;
   padding: 10px;
+  color: whitesmoke;
 }
 
 .brand a {
@@ -117,6 +118,7 @@ input:focus {
   align-items: center;
 
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .controls {
@@ -145,4 +147,22 @@ input:focus {
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
+}
+
+.pagination__movies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+.footer__content {
+  font-size: 12px;
+  text-align: center;
+  background-color: #021437;
+  padding: 10px;
+  color: whitesmoke;
 }

@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import ResultCard from './ResultCard/ResultCard';
+import PaginationMovies from './PaginationMovies';
 
 import '../../App.css';
 
 const Add = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(localStorage.getItem('fetchResults') !== 'undefined' ? JSON.parse(localStorage.getItem('fetchResults')) : []);
+  const [page, setPage] = useState(1);
 
   const getFilms = async () => {
     try {
-      const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${query}`
+      const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${query}&page=${page}`
       const response = await fetch(url);
       const data = await response.json();
       localStorage.setItem('fetchResults', JSON.stringify(data.Search))
       setResults(data.Search)
+      console.log(results)
     } catch (error) {
       console.log(error)
     }
   }
+
+  useEffect(() => {
+    getFilms()
+  }, [page])
 
   function onChange(e) {
     e.preventDefault();
@@ -52,6 +59,7 @@ const Add = () => {
               ))}
             </ul>
           )}
+          <PaginationMovies page={page} setPage={setPage}/>
         </div>
       </div>
     </div>

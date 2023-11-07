@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <div>
+    <div className='header_top'>
       <div className="container">
-        <div className="inner-content">
+        <div className="header__content">
           <div className="brand">
             <Link to='/'>WatchList</Link>
           </div>
