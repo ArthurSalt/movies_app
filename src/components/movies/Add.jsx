@@ -7,33 +7,11 @@ const Add = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(localStorage.getItem('fetchResults') !== 'undefined' ? JSON.parse(localStorage.getItem('fetchResults')) : []);
 
-  // const getMovies = async () => {
-  //   const url = 'https://moviesdatabase.p.rapidapi.com/titles';
-  //   const options = {
-  //     method: 'GET',
-  //     headers: {
-  //       'X-RapidAPI-Key': '821f8762f7mshad36b6397ecd8edp18cf51jsnde811bb8c9ea',
-  //       'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-  //     }
-  //   };
-
-  //   try {
-  //     const response = await fetch(url, options);
-  //     const data = await response.json();
-  //     console.log(data.results);
-  //     setResults(data.results)
-  //     localStorage.setItem('fetchResults', JSON.stringify(data.results))
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
-
   const getFilms = async () => {
     try {
       const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${query}`
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data.Search)
       localStorage.setItem('fetchResults', JSON.stringify(data.Search))
       setResults(data.Search)
     } catch (error) {
@@ -41,10 +19,15 @@ const Add = () => {
     }
   }
 
-
   function onChange(e) {
     e.preventDefault();
     setQuery(e.target.value);
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      getFilms()
+    }
   }
 
   return (
@@ -55,14 +38,15 @@ const Add = () => {
             <input type="text"
               placeholder='Search for a movie'
               value={query}
-              onChange={onChange} />
+              onChange={onChange} 
+              onKeyDown={handleKeyDown}/>
             <button className='btn' onClick={getFilms}>Search</button>
           </div>
 
           {results && (
             <ul className="results">
               {results.map(movie => (
-                <li key={movie.imdbID}>
+                <li key={movie.imdbID} className={'result_card_wrapper'}>
                   <ResultCard movie={movie} />
                 </li>
               ))}

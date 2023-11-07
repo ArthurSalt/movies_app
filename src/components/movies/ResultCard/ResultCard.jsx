@@ -15,8 +15,8 @@ const ResultCard = ({ movie }) => {
          <div className='movie_info'>
             <img className='poster' src={movie.Poster} alt="" />
             <div className='movie_data'>
-               <h2>{movie.Title.length > 40
-                  ? movie.Title.slice(0, 40) + "..."
+               <h2>{movie.Title.length > 30
+                  ? movie.Title.slice(0, 30) + "..."
                   : movie.Title
                }</h2>
                <h3>{movie.Year}</h3>

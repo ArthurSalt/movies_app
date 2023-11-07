@@ -14,7 +14,7 @@ const Watched = () => {
         {watched.length > 0 ? (
           <div className='movies_list'>
             {watched.map((movie) => (
-              <li key={movie.imdbID}>
+              <li key={movie.imdbID} >
                 <MovieCard movie={movie} type='watched' />
               </li>
 

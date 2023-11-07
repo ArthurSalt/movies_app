@@ -111,6 +111,7 @@ input:focus {
 }
 
 .results {
+  padding: 0 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,10 +147,15 @@ input:focus {
 .movie_card {
   margin: 10px;
   width: 200px;
-  height: 350px;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.movie_card h3 {
+  height: 100%;
+  flex-grow: 1;
 }
