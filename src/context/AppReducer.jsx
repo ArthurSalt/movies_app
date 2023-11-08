@@ -1,5 +1,17 @@
 export default (state, action) => {
    switch (action.type) {
+
+      case 'SET_PAGE':
+         return {
+            ...state,
+            page: action.payload
+         }
+
+      case 'SET_SEARCH_VALUE':
+         return {
+            ...state,
+            searchValue: action.payload
+         }
       case 'ADD_MOVIE_TO_WATCHLIST':
          return {
             ...state,
@@ -29,7 +41,6 @@ export default (state, action) => {
             watched: state.watched.filter(
                movie => movie.imdbID !== action.payload)
          }
-
       default:
          return state;
    }

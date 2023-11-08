@@ -13,7 +13,7 @@ const ResultCard = ({ movie }) => {
    return (
       <div className='result_card'>
          <div className='movie_info'>
-            <img className='poster' src={movie.Poster} alt="" />
+            <img className='poster' src={movie.Poster} alt="Movie Poster" />
             <div className='movie_data'>
                <h2>{movie.Title.length > 30
                   ? movie.Title.slice(0, 30) + "..."

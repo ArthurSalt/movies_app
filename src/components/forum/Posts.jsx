@@ -51,8 +51,6 @@ function Posts() {
 
   return (
     <div className="App">
-
-      {/* <MyButton onClick={fetchPosts}>Get Posts</MyButton> */}
       <MyButton onClick={() => setModal(true)}>Создать новую тему</MyButton>
 
       <MyModal visible={modal} setVisible={setModal}>
@@ -62,20 +60,15 @@ function Posts() {
 
       <hr style={{ margin: '20px' }} />
 
-      <PostFilter
-        filter={filter}
-        setFilter={setFilter}
-      />
+      <PostFilter filter={filter} setFilter={setFilter}/>
+
+      <Pagination page={page} changePage={changePage} totalPages={totalPages}/>
+      
       {postError && <h1 style={{ textAlign: 'center' }}>Произошла ошибка</h1>}
       {isPostsLoading
         ? <Loader />
         : <PostList posts={sortedAndSearchedPosts} remove={removePost} title='Список тем' />
       }
-      <Pagination
-        page={page}
-        changePage={changePage}
-        totalPages={totalPages}
-      />
     </div>
   );
 }
