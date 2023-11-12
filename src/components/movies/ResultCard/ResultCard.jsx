@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './ResultCard.css';
 import { GlobalContext } from '../../../context/GlobalState';
 
 const ResultCard = ({ movie }) => {
    const { addMovieToWatchlist, watchlist, watched } = useContext(GlobalContext)
 
-   let title = movie.Title.length > 40 ? movie.Title.split('').slice(20).join('') + '...' : movie.Title;
    let storedMovie = watchlist.find(obj => obj.imdbID === movie.imdbID);
    let watchedMovie = watched.find(obj => obj.imdbID === movie.imdbID);
    let watchlistDisabled = storedMovie || watchedMovie ? true : false;
