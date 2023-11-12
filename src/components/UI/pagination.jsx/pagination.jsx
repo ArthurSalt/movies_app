@@ -8,7 +8,7 @@ const Pagination = ({ totalPages, page, changePage }) => {
             <span
                onClick={() => changePage(p)}
                key={p}
-               className={page === p ? 'page page__current' : 'page'}>{p}</span>
+               className={page === p ? 'page page--active' : 'page'}>{p}</span>
          )}
       </div>
    );

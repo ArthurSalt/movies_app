@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const PostList = ({ posts, title, remove }) => {
    return (
-      <div>
+      <div className="post_list">
          <h1 style={{ textAlign: 'center' }}>{title}</h1>
          <TransitionGroup>
             {posts.map((post, index) =>

@@ -4,6 +4,10 @@
    box-sizing: border-box;
 }
 
+.post_list {
+   flex-grow: 1;
+}
+
 .post {
    display: flex;
    width: 800px;
@@ -47,7 +51,7 @@
    color: teal;
    font-size: 14px;
    cursor: pointer;
-   margin: 10px;
+   margin-right: 10px;
 }
 
 .page:hover {
@@ -55,9 +59,10 @@
    background-color: rgb(148, 160, 247);
 }
 
-.page__current {
-   /* border: 2px solid orange; */
+.page--active {
    color: rgb(189, 168, 1);
    font-weight: bolder;
    font-size: 20px;
+   padding: 5px 15px;
+   margin-right: 10px;
 }

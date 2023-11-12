@@ -1,0 +1,32 @@
+.watched_movies_list {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.watched_result_card_wrapper {
+  width: 320px;
+  box-shadow: 0 0 5px 2px grey;
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.watched_result_card {
+  padding: 5px;
+  display: flex;
+}
+
+.watched_movie_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 15px;
+}
+
+.watched_poster_img {
+  width: 100px;
+  height: 150px;
+  border-radius: 5px;
+}
