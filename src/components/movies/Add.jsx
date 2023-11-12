@@ -9,11 +9,11 @@ const Add = () => {
   const {searchValue, setSearchValue, page, setPage} = useContext(GlobalContext)
   const [results, setResults] = useState(localStorage.getItem('fetchResults') !== 'undefined' ? JSON.parse(localStorage.getItem('fetchResults')) : []);
 
-  const movies = results ? results.filter(obj => obj.Type === 'movie') : null;
+  // const movies = results ? results.filter(obj => obj.Type === 'movie') : null;
 
   const getFilms = async () => {
     try {
-      const url = `http://www.omdbapi.com/?i=tt3896198&apikey=4896bdea&s=${searchValue}&page=${page}`
+      const url = `http://www.omdbapi.com/?apikey=4896bdea&s=${searchValue}&page=${page}`
       const response = await fetch(url);
       const data = await response.json();
       localStorage.setItem('fetchResults', JSON.stringify(data.Search))
@@ -55,10 +55,10 @@ const Add = () => {
             onKeyDown={handleKeyDown}/>
           <button className='btn' onClick={onClickSearch}>Search</button>
         </div>
-        {movies && (
+        {results && (
           <div className='results_wrapper'>
             <ul className="results">
-              {movies.map(movie => (
+              {results.map(movie => (
                 <li key={movie.imdbID} className='result_card_wrapper'>
                   <ResultCard movie={movie} />
                 </li>

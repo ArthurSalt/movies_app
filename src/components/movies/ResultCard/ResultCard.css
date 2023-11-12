@@ -19,3 +19,11 @@
    text-align: center;
 }
 
+.poster {
+   cursor: pointer;
+   transition: all .5s;
+}
+
+.poster:hover {
+   transform: scale(1.05);
+}
