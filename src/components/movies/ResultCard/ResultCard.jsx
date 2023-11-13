@@ -13,7 +13,7 @@ const ResultCard = ({ movie }) => {
    return (
       <div className='result_card'>
          <div className='movie_info'>
-            <Link to={`/movie/${movie.imdbID}`}>
+            <Link to={`/${movie.imdbID}`}>
                <img className='poster' src={movie.Poster} alt="Movie Poster" />
             </Link>            
             <div className='movie_data'>

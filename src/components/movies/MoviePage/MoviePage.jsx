@@ -10,7 +10,7 @@ export const MoviePage = () => {
   useEffect(() => {
     async function getFilmsByID() {
       try {
-        const url = `http://www.omdbapi.com/?apikey=4896bdea&i=${id}`
+        const url = `https://www.omdbapi.com/?apikey=4896bdea&i=${id}`
         const response = await fetch(url);
         const data = await response.json();
         setMovie(data);

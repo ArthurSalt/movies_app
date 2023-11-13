@@ -13,7 +13,7 @@ const Add = () => {
 
   const getFilms = async () => {
     try {
-      const url = `http://www.omdbapi.com/?apikey=4896bdea&s=${searchValue}&page=${page}`
+      const url = `https://www.omdbapi.com/?apikey=4896bdea&s=${searchValue}&page=${page}`
       const response = await fetch(url);
       const data = await response.json();
       localStorage.setItem('fetchResults', JSON.stringify(data.Search))
