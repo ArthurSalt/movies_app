@@ -6,6 +6,7 @@
 }
 html, body {
   height: 100%;
+  min-width: 400px;
 }
 
 body {
@@ -22,11 +23,13 @@ input:focus {
 }
 
 #root {
+  min-width: 100%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 .App {
   min-height: 100%;
@@ -120,6 +123,7 @@ input:focus {
 }
 
 .add-content {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,16 +133,31 @@ input:focus {
   padding-top: 10px;
 }
 
+.bg_img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: .2;
+  z-index: -1;
+}
+
 .input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
-  width: 50%;
+  min-width: 50%;
   background-color: #021437;
   padding: 5px;
   border-radius: 4px;
 }
 
 .input-wrapper input {
-  width: 85%;
+  min-width: 60%;
+  height: 20px;
   background-color: #cac3ff;
   padding: 3px;
   border-radius: 2px;
@@ -166,15 +185,6 @@ input:focus {
   text-transform: uppercase;
 }
 
-.result_item {
-  width: 220px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .poster {
   width: 200px;
   height: 250px;
@@ -194,13 +204,50 @@ input:focus {
   margin-bottom: 20px;
 }
 
+.no-movies {
+  text-align: center;
+}
+
+.pagination_movies_wrapper {
+  margin: 0 auto;
+}
+
 .pagination__movies {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 40%;
-  margin-bottom: 10px;
+  margin: 20px 0px;
 
+  cursor: pointer;
+}
+
+.page {
+  width: 20px;
+  height: 20px;
+  padding: 10px 10px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.page:hover {
+  cursor: pointer;
+  background-color: rgb(148, 160, 247);
+  border-radius: 50%;
+}
+
+.page--active {
+  width: 20px;
+  height: 20px;
+  padding: 10px 10px;
+ 
+  font-size: 18px;
+  font-weight: bolder;
+  text-align: center;
+  color: rgb(189, 168, 1);
+  background-color: #021437;
+  border-radius: 50%;
   cursor: pointer;
 }
 

@@ -2,13 +2,13 @@
 import MovieControlls from '../MovieControlls';
 import {Link} from 'react-router-dom'
 
-import '../../../App.css';
+import '../../App.css';
 
 export const MovieCard = ({ movie, type }) => {
    return (
       <div className="result_card">
          <div className='movie_info'>
-            <Link to={`/movie/${movie.imdbID}`}>
+            <Link to={`/${movie.imdbID}`}>
                {movie.Poster ? (
                   <img className='poster' src={movie.Poster} alt="poster" />
                ) : (

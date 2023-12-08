@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+
 import './MoviePage.css'
 
 export const MoviePage = () => {
@@ -20,8 +21,6 @@ export const MoviePage = () => {
     }
     getFilmsByID()
   }, [])
-
-  console.log(movie)
 
   return (
     <>

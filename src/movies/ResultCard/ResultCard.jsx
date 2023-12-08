@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './ResultCard.css';
-import { GlobalContext } from '../../../context/GlobalState';
+import { GlobalContext } from '../../context/GlobalState';
 import { Link } from 'react-router-dom';
 
 const ResultCard = ({ movie }) => {

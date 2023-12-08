@@ -1,6 +1,7 @@
 .movie_page__content {
   display: flex;
   font-size: 18px;
+  padding: 40px;
 }
 
 .movie_page__img_box {

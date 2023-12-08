@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalState';
+import { GlobalContext } from '../context/GlobalState';
 import ResultCard from './ResultCard/ResultCard';
 import PaginationMovies from './PaginationMovies';
 
-import '../../App.css';
+import '../App.css';
 const Add = () => {
   const {searchValue, setSearchValue, page, setPage} = useContext(GlobalContext)
   const [results, setResults] = useState(localStorage.getItem('fetchResults') !== 'undefined' ? JSON.parse(localStorage.getItem('fetchResults')) : []);
@@ -47,6 +47,7 @@ const Add = () => {
   return (
     <div className="add-page">
       <div className="add-content">
+        <img className='bg_img' src="https://www.elsubtitle.com/wp-content/uploads/2017/05/elsubtitle_header.jpg" alt="" />
         <div className="input-wrapper">
           <input type="text"
             placeholder='Search for a movie... e.g. Harry Potter'

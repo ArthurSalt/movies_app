@@ -12,19 +12,15 @@ export default function Header() {
 
           <ul className="nav_links">
             <li>
-              <Link to='/' >Watch List</Link>
+              <Link to='/watchlist' >Watch List</Link>
             </li>
             <li>
               <Link to='/watched'>Watched</Link>
             </li>
             <li>
-              <Link to='/add' className='btn'>+ Add</Link>
-            </li>
-            <li>
-              <Link to='/forum' className='btn'>Forum</Link>
+              <Link to='/' className='btn'>+ Add</Link>
             </li>
           </ul>
-
         </div>
       </div>
     </div>

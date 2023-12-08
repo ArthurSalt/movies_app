@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalState';
+import { GlobalContext } from '../context/GlobalState';
 import MovieCard from './MovieCard/MovieCard';
 
-import '../../App.css';
+import '../App.css';
 
 const Watchlist = () => {
   const { watchlist } = useContext(GlobalContext)
@@ -22,7 +22,7 @@ const Watchlist = () => {
               ))}
             </div>
           ) : (
-            <h2 className='no-movies'>No movies listed</h2>
+            <h2 className='no-movies'>No movies listed. Please add movies to your watchlist.</h2>
           )}
         </div>
       </div>
