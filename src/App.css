@@ -151,17 +151,17 @@ input:focus {
   margin: 0 auto;
   min-width: 50%;
   background-color: #021437;
-  padding: 5px;
-  border-radius: 4px;
+  /* padding: 5px; */
+  border-radius: 10px;
 }
 
 .input-wrapper input {
   min-width: 60%;
-  height: 20px;
+  height: 15px;
   background-color: #cac3ff;
   padding: 3px;
   border-radius: 2px;
-  margin-right: 10px;
+  margin: 10px;
 }
 
 .results_wrapper {
