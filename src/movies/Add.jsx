@@ -9,8 +9,6 @@ const Add = () => {
   const {searchValue, setSearchValue, page, setPage} = useContext(GlobalContext)
   const [results, setResults] = useState(localStorage.getItem('fetchResults') !== 'undefined' ? JSON.parse(localStorage.getItem('fetchResults')) : []);
 
-  // const movies = results ? results.filter(obj => obj.Type === 'movie') : null;
-
   const getFilms = async () => {
     try {
       const url = `https://www.omdbapi.com/?apikey=4896bdea&s=${searchValue}&page=${page}`
