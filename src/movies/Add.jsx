@@ -45,7 +45,6 @@ const Add = () => {
   return (
     <div className="add-page">
       <div className="add-content">
-        <img className='bg_img' src="https://www.elsubtitle.com/wp-content/uploads/2017/05/elsubtitle_header.jpg" alt="" />
         <div className="input-wrapper">
           <input type="text"
             placeholder='Search for a movie... e.g. Harry Potter'

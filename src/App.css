@@ -133,15 +133,18 @@ input:focus {
   padding-top: 10px;
 }
 
-.bg_img {
+.add-content:before {
+  content: ' ';
   position: absolute;
-  object-fit: cover;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  opacity: .2;
+  opacity: 0.2;
   z-index: -1;
+  background-image: url('https://www.elsubtitle.com/wp-content/uploads/2017/05/elsubtitle_header.jpg');
+  background-repeat: repeat;
+  background-size: contain;
 }
 
 .input-wrapper {
