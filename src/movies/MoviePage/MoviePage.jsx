@@ -1,20 +1,25 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Loader from '../Loader/Loader'
 
 import './MoviePage.css'
 
 export const MoviePage = () => {
   const { id } = useParams()
   const [movie, setMovie] = useState({})
+  const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
     async function getFilmsByID() {
       try {
+        setIsLoading(true)
         const url = `https://www.omdbapi.com/?apikey=4896bdea&plot=full&i=${id}`
         const response = await fetch(url);
         const data = await response.json();
         setMovie(data);
+        setIsLoading(false)
       } catch (error) {
         console.log(error);
       }
@@ -24,7 +29,8 @@ export const MoviePage = () => {
 
   return (
     <>
-      {movie && (
+
+      {isLoading ? <Loader/> : (
       <div className="movie_page_wrapper">
         <div className="movie_page__content">
           <div className="movie_page__img_box">
